@@ -18,7 +18,7 @@ Por ahora, Rabbit solo está disponible para ser descargado directamente desde G
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/mmrasteu/rabbit-framework.git
+   git clone https://github.com/mmrasteu/phprabbit-framework.git
    ```
 
 2. Accede a la carpeta del proyecto:
