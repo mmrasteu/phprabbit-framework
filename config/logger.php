@@ -1,0 +1,2 @@
+<?php 
+# Configuracion de logs
