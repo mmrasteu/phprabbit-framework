@@ -1,0 +1,37 @@
+{
+    "name": "mmrasteu/phprabbit",
+    "description": "",
+    "type": "project",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.2",
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^2.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rabbit\\": "api/",
+            "Rabbit\\Validate\\ValidationRules\\": "api/Validators/ValidationRules/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Miguel A. M. Rasteu",
+            "email": "mmrasteu@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "firebase/php-jwt": "^6.10",
+        "illuminate/database": "^11.33",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "bin": [
+        "rabbit"
+    ],
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php rabbit install"
+        ]
+    }
+}
