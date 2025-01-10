@@ -136,4 +136,4 @@ Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE
 
 ## Contacto
 
-Puedes ponerte en contacto conmigo a través de [contacto@phprabbit.es] para cualquier pregunta o sugerencia.
+Puedes ponerte en contacto conmigo a través de [mmrasteu@gmail.com] para cualquier pregunta o sugerencia.
