@@ -1,12 +1,13 @@
 <?php
-require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../core/bootstrap.php';
 
 use Rabbit\Core\Container;
 use Rabbit\Core\Router;
+use Rabbit\Core\WebView;
 use Rabbit\Http\Request;
 use Rabbit\Http\Response;
 
-$config = require_once __DIR__ . '/../config/app.php';
+$config = require_once BASE_PATH . '/core/config/app.php';
 
 // Crear el contenedor
 $container = new Container();
@@ -23,7 +24,10 @@ $container->set('Rabbit\Http\Response', 'Rabbit\Http\Response', true);
 
 // Obtener las instancias
 $request = $container->get('Rabbit\Http\Request');
-//$response = $container->get('Rabbit\Http\Response');
+
+// Crear una instancia de WebView y manejar la solicitud
+$webView = new WebView();
+$webView->handleRequest($request);
 
 // Configurar Router y despachar
 Router::setControllerNamespace($config['controller_namespace']);

@@ -9,18 +9,20 @@ use Exception;
 
 class Router
 {
-    protected static $routes = [
+    public static $routes = [
         'GET' => [],
         'POST' => [],
         'PUT' => [],
         'DELETE' => []
     ];
 
-    protected static $groups = [];
-    protected static $currentGroup = null;
+    public static $reservedRoutes = [DOCS_ROUTE, 'OTRARUTA'];
 
-    protected static $controllerNamespace = 'Rabbit\Controllers';
-    protected static $middlewareNamespace = 'Rabbit\Middlewares';
+    public static $groups = [];
+    public static $currentGroup = null;
+
+    public static $controllerNamespace = 'Rabbit\Controllers';
+    public static $middlewareNamespace = 'Rabbit\Middlewares';
 
     public static function getControllerNamespace()
     {
@@ -46,11 +48,13 @@ class Router
     public static function group($options, $callback)
     {
         $prefix = $options['prefix'] ?? '';
+        $name = $options['name'] ?? '';
         $middlewares = $options['middlewares'] ?? [];
         
         $groupId = uniqid('group_', true);
 
         self::$groups[$groupId] = [
+            'name' => $name,
             'prefix' => $prefix,
             'middlewares' => $middlewares
         ];
@@ -89,12 +93,23 @@ class Router
 
         if ($group) {
             $pattern = rtrim($group['prefix'], '/') . '/' . ltrim($pattern, '/');
+            $pattern = rtrim($pattern, '/');
             $middlewares = array_merge($group['middlewares'], $middlewares);
+        }
+
+        if(in_array($pattern, self::$reservedRoutes)){
+
+            $msg = "Error in endpoints: `". $pattern . "`" . ' is a reserved route';
+
+            $response = new Response();
+            $response->withStatus404($msg); // Mejorar esta función para también enviar el cuerpo de la respuesta
+
         }
 
         self::$routes[$method][$pattern] = [
             'action' => $controllerAction,
-            'middlewares' => $middlewares
+            'middlewares' => $middlewares,
+            'groupName' => $group['name']
         ];
     }
 
@@ -137,14 +152,22 @@ class Router
 
     private static function handleMiddlewares(array $middlewares, Request $request, Container $container)
     {
-        
-        foreach ($middlewares as $middleware) {
-            
-            $middlewareClass = self::$middlewareNamespace . '\\' . $middleware;
-            $middlewareInstance = $container->get($middlewareClass);
-            
-            $middlewareInstance->handle($request, new Response(), function () {
-            });
+        foreach ($middlewares as $key => $middleware) {
+            if(is_array($middleware)) {
+                $args = $middleware;
+                $middleware = $key;
+                $middlewareClass = self::$middlewareNamespace . '\\' . $middleware;
+                $middlewareInstance = new $middlewareClass($args);
+
+                $middlewareInstance->handle($request, new Response(), function () { });
+
+            } else {
+                $middlewareClass = self::$middlewareNamespace . '\\' . $middleware;
+                $middlewareInstance = $container->get($middlewareClass);
+                
+                $middlewareInstance->handle($request, new Response(), function () { });
+            }
         }
     }
+
 }

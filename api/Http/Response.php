@@ -307,11 +307,11 @@ class Response implements ResponseInterface {
         $render();
     }
 
-    public function withCustomStatus(
-        array $data,
-        string $message,
+    public function withStatus(
+        int $status,
         string $title,
-        int $status
+        string $message,
+        array $data
     ): Render {
         $renderData = [
             'status' => $status,

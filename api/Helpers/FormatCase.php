@@ -4,10 +4,6 @@ namespace Rabbit\Helpers;
 
 class FormatCase {
 
-  public function __construct(){
-
-  }
-
   public function transform(string $formatCase, array $data){
     switch($formatCase) {
       case 'camelCase':
@@ -41,24 +37,24 @@ class FormatCase {
   }
 
   private function convertToSnakeCase(array $data){
-      $convertedData = [];
-  
-      foreach ($data as $key => $value) {
-          // Convertir la clave a snake_case
-          $newKey = strtolower(preg_replace('/[A-Z]/', '_$0', $key));
-          $newKey = str_replace(' ', '_', $newKey);
-          $newKey = preg_replace('/_+/', '_', $newKey);
-  
-          // Si el valor es un array, también lo convertimos recursivamente
-          if (is_array($value)) {
-              $convertedData[$newKey] = $this->convertToSnakeCase($value);
-          } else {
-              $convertedData[$newKey] = $value;
-          }
-      }
-  
-      return $convertedData;
-  
+    $convertedData = [];
+
+    foreach ($data as $key => $value) {
+        // Convertir la clave a snake_case
+        $newKey = strtolower(preg_replace('/[A-Z]/', '_$0', $key)); // Cambia las mayúsculas por un guion bajo
+        $newKey = ltrim($newKey, '_'); // Eliminar guion bajo extra al principio
+        $newKey = str_replace(' ', '_', $newKey); // Reemplazar espacios por guiones bajos
+        $newKey = preg_replace('/_+/', '_', $newKey); // Eliminar guiones bajos consecutivos
+
+        // Si el valor es un array, también lo convertimos recursivamente
+        if (is_array($value)) {
+            $convertedData[$newKey] = $this->convertToSnakeCase($value);
+        } else {
+            $convertedData[$newKey] = $value;
+        }
+    }
+
+    return $convertedData;
   }
 
   private function convertToPascalCase(array $data){
@@ -82,6 +78,24 @@ class FormatCase {
     }
 
     return $convertedData;
+  }
+
+  public static function convertTextToSnakeCase(string $text) {
+    $newText = strtolower(preg_replace('/[A-Z]/', '_$0', $text)); // Cambia las mayúsculas por un guion bajo
+    $newText = ltrim($newText, '_'); // Eliminar guion bajo extra al principio
+    $newText = str_replace(' ', '_', $newText); // Reemplazar espacios por guiones bajos
+    $newText = preg_replace('/_+/', '_', $newText); // Eliminar guiones bajos consecutivos
+    return $newText;
+  }
+
+  public static function convertTextToPascalCase(string $text) {
+    $newText = preg_replace_callback('/(?:^|_|\s)([a-z])/', function ($matches) {
+      return strtoupper($matches[1]);
+    }, $text);
+    
+    // Eliminar los guiones bajos y los espacios
+    $newText = str_replace(['_', ' '], '', $newText);
+    return $newText;
   }
 
 }

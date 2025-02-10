@@ -5,6 +5,7 @@ namespace Rabbit\Core;
 use Rabbit\Http\Request;
 use Rabbit\Http\Response;
 use Rabbit\Core\RequestValidator;
+use OpenApi\Annotations as OA;
 
 abstract class BaseController {
 

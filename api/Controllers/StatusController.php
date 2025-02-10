@@ -1,33 +1,44 @@
-<?php 
+<?php
 
 namespace Rabbit\Controllers;
 
 use Rabbit\Core\BaseController;
 use Rabbit\Validators\StatusValidator;
+use Rabbit\Exceptions\BaseException;
+use Rabbit\Exceptions\ValidationException;
+use Rabbit\Exceptions\DatabaseException;
+use Rabbit\Exceptions\ExceptionHandler;
+use OpenApi\Annotations as OA;  // Importar las anotaciones de Swagger
 
-class StatusController extends BaseController{
+class StatusController extends BaseController {
 
-    public function getStatus(){
-        $this->validate(new StatusValidator($this->request, $this->response));
+  /**
+   * @OA\Get(
+   *   path="/api/status",
+   *   summary="Endpoint de estado del servidor,
+   *   tags={"Status"},
+   *   security={{"BearerAuth":{}}}, 
+   *   @OA\Response(response=200, description="OK"),
+   *   @OA\Response(response=403, description="Acceso denegado")
+   * )
+   */
+  public function getStatus() {
+    try {
+      // Validación de la solicitud
+      $this->validate(new StatusValidator($this->request, $this->response));
+      
+      // Datos de respuesta
+      $data = [
+        'server_status' => 'OK'
+      ];
 
-        $headers = $this->request->getAllHeaders();
-
-        $id = $this->request->getParam('id');
-
-        $data = [
-            'id' => (int) $id
-        ];
-        
-        $this->response->withStatus200($data);
+      $this->response->withStatus200($data);
+    } catch (ValidationException $e) {
+      ExceptionHandler::handle($e);
+      $this->response->withStatus400($e->getMessage());
+    } catch (BaseException $e) {
+      ExceptionHandler::handle($e);
+      $this->response->withStatus500($e->getMessage());
     }
-
-    public function getStatusWithID($id=0, $test=''){
-        $data = [
-            'id' => $id,
-            'test' => $test
-        ];
-        
-        $this->response->withStatus200($data);
-    }
-
+  }
 }

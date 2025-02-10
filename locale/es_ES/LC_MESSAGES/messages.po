@@ -1,0 +1,29 @@
+# Archivo: /locale/es_ES/LC_MESSAGES/messages.po
+
+msgid "Command not found"
+msgstr "Comando no encontrado"
+
+msgid "An error has occurred with the database"
+msgstr "Ha ocurrido un error con la base de datos"
+
+msgid "An error has occurred"
+msgstr "Ha ocurrido un error"
+
+msgid "An unknown error has occurred"
+msgstr "Ha ocurrido un error desconocido"
+
+msgid "Could not read the log file"
+msgstr "No se pudo leer el archivo de log"
+
+msgid "The log file has been cleared"
+msgstr "El archivo de log ha sido limpiado"
+
+msgid "Could not clear the log file"
+msgstr "No se pudo limpiar el archivo de log"
+
+msgid "Enviroment"
+msgstr "Entorno"
+
+msgid "There are undefined environment variables"
+msgstr "Hay constantes de entorno sin definir"
+

@@ -4,6 +4,7 @@ namespace Rabbit\Core;
 
 use Rabbit\Http\Request;
 use Rabbit\Http\Response;
+use Rabbit\Exceptions\ValidationException;
 
 
 class RequestValidator {
@@ -26,7 +27,7 @@ class RequestValidator {
 
   public function validate() {
 
-    if (!$this->request || !$this->response) throw new Exception("Validate require Request");
+    if (!$this->request || !$this->response) throw new ValidationException("Validate require Request");
 
     $this->checkAcceptsParams();
     
@@ -43,7 +44,7 @@ class RequestValidator {
     foreach ($params as $key => $value) {
       
       if (!in_array($key, $this->accepts)) {
-          $this->response->withStatus400('Invalid param \''. $key .'\' on request');
+        throw new ValidationException('Invalid param \''. $key .'\' on request');
       }
 
     }
@@ -75,7 +76,7 @@ class RequestValidator {
         }
 
         if(!empty($this->errors)) {
-          $this->response->withStatus400('Failed validation rules', $this->errors );
+          throw new ValidationException("Failed validation rules", null, $this->errors);
         }
 
         return true;
@@ -87,11 +88,14 @@ class RequestValidator {
   }
 
   protected function applyRule($rule, $param, $value) {
+    $reservedNamesExceptions = ['string', 'array'];
+    if(in_array($rule, $reservedNamesExceptions)) {
+      $rule = $rule.'Validate';
+    }
     $className = "\\Rabbit\\Validate\\ValidationRules\\" . ucfirst($rule);
-
+    
     if (!class_exists($className)) {
-      $this->response->withStatus400("Validation rule {$rule} does not exist.");
-        //throw new Exception("Validation rule {$rule} does not exist.");
+      throw new ValidationException("Validation rule {$rule} does not exist.");
     }
 
     $ruleInstance = new $className($this->response);

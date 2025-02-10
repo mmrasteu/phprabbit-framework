@@ -3,30 +3,12 @@ namespace Rabbit\Routes;
 
 use Rabbit\Core\Router;
 
-Router::group(['prefix' => '/api', 'middlewares' => []], function () {
+//Grupo de endpoints abiertos.
+Router::group(['name'=>'openEndpoints', 'prefix' => '/api', 'middlewares' => []], function () {
     Router::POST('/auth', ['AuthController', 'getBearerToken']);
 });
 
-Router::group(['prefix' => '/api', 'middlewares' => ['BearerTokenMiddleware']], function () {
+//Grupo de endpoints para usuarios con rol 'api_user' y con autenticación necesaria.
+Router::group(['name'=>'authApiUserEndpoints', 'prefix' => '/api', 'middlewares' => ['RoleMiddleware'=>['api_user']]], function () {
     Router::GET('/status', ['StatusController', 'getStatus']);
 });
-
-Router::group(['prefix' => '/api', 'middlewares' => ['BearerTokenMiddleware', 'TestMiddleware']], function () {
-    Router::GET('/status/{id}/otracosa/{test}', ['StatusController', 'getStatusWithID']); 
-});
-
-/*
-Router::group(['prefix' => '/admin', 'middlewares' => ['AdminMiddleware']], function () {
-    Router::POST('/create', ['AdminController', 'createItem']);
-    Router::DELETE('/delete/{id}', ['AdminController', 'deleteItem']);
-});*/
-
-
-/*
-Router::GET('users/{id}', 'UserController@getUser');
-Router::GET('users', 'UserController@getUsers');
-Router::POST('users', 'UserController@createUser');
-Router::PUT('users/{id}', 'UserController@updateUser');
-Router::DELETE('users/{id}', 'UserController@deleteUser');
-*/
-
