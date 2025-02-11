@@ -22,7 +22,7 @@
 - **Comandos `php rabbit`:** Más comandos básicos usando `php rabbit [comando]`.
 - **Traducciones:** Traducido al ingles y al español de los mensajes del framework.
 
-## [0.2.0] - 2025-02-09
+## [0.2.0] - 2025-02-16
 ### Added
 - **Autenticación JWT:** Implementación total de autenticación usando JWT.
 - **ORM:** Soporte básico para uso de modelos y bases de datos con el framework.
@@ -31,6 +31,7 @@
 - **Roles:** Implementación total de roles de usuarios API.
 - **Traducciones:** Implementación de la lógica de traducciones con `_t('mensaje');`
 - **Log:** Implementación del log del framework.
+- **Swagger:** IMplementación de Swagger para generar documentación de la API. 
 
 ## [0.1.0] - 2025-01-10
 ### Added

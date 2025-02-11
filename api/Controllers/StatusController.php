@@ -15,13 +15,38 @@ class StatusController extends BaseController {
   /**
    * @OA\Get(
    *   path="/api/status",
-   *   summary="Endpoint de estado del servidor,
-   *   tags={"Status"},
+   *   summary="Endpoint de estado del servidor",
+   *   tags={"API Endpoints"},
    *   security={{"BearerAuth":{}}}, 
-   *   @OA\Response(response=200, description="OK"),
-   *   @OA\Response(response=403, description="Acceso denegado")
-   * )
-   */
+       *   @OA\Response(
+     *     response=200,
+     *     description="Inicio de sesión exitoso",
+     *     @OA\JsonContent(
+     *       @OA\Property(property="status", type="integer", example=200),
+     *       @OA\Property(property="title", type="string", example="Success"),
+     *       @OA\Property(property="message", type="string", example="200 - Success"),
+     *       @OA\Property(property="data", type="object",
+     *         @OA\Property(property="serverStatus", type="string", example="OK"),
+     *       )
+     *     )
+     *   ),
+     *   @OA\Response(
+     *     response=401,
+     *     description="Credenciales inválidas",
+     *     @OA\JsonContent(
+     *       @OA\Property(property="status", type="integer", example=401),
+     *       @OA\Property(property="title", type="string", example="Unauthorized"),
+     *       @OA\Property(property="message", type="string", example="401 - Unauthorized"),
+     *       @OA\Property(property="errors", type="object",
+     *         @OA\Property(property="message", type="string", example=""),
+     *         @OA\Property(property="details", type="array",
+     *           @OA\Items(type="string", example="")
+     *         )
+     *       )
+     *     )
+     *   )
+     * )
+     */
   public function getStatus() {
     try {
       // Validación de la solicitud

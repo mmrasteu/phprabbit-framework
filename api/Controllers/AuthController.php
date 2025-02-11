@@ -32,17 +32,36 @@ class AuthController extends BaseController{
      * @OA\Post(
      *   path="/api/auth",
      *   summary="Autenticar usuario y obtener JWT",
-     *   tags={"Auth"},
-     *   security={{"BasicAuth":{}}},
+     *   tags={"API Auth"}, 
+     *   security={{"BasicAuth":{}}}, 
      *   @OA\Response(
      *     response=200,
-     *     description="JWT generado correctamente",
+     *     description="Inicio de sesión exitoso",
      *     @OA\JsonContent(
-     *       @OA\Property(property="auth", type="string"),
-     *       @OA\Property(property="userId", type="integer")
+     *       @OA\Property(property="status", type="integer", example=200),
+     *       @OA\Property(property="title", type="string", example="Success"),
+     *       @OA\Property(property="message", type="string", example="200 - Success"),
+     *       @OA\Property(property="data", type="object",
+     *         @OA\Property(property="userId", type="integer", example=1),
+     *         @OA\Property(property="auth", type="string", example="**************************")
+     *       )
      *     )
      *   ),
-     *   @OA\Response(response=401, description="Unauthorized")
+     *   @OA\Response(
+     *     response=401,
+     *     description="Credenciales inválidas",
+     *     @OA\JsonContent(
+     *       @OA\Property(property="status", type="integer", example=401),
+     *       @OA\Property(property="title", type="string", example="Unauthorized"),
+     *       @OA\Property(property="message", type="string", example="401 - Unauthorized"),
+     *       @OA\Property(property="errors", type="object",
+     *         @OA\Property(property="message", type="string", example=""),
+     *         @OA\Property(property="details", type="array",
+     *           @OA\Items(type="string", example="")
+     *         )
+     *       )
+     *     )
+     *   )
      * )
      */
 

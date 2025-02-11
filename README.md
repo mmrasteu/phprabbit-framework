@@ -184,9 +184,10 @@ Puedes ponerte en contacto conmigo a través de [mmrasteu@gmail.com] para cualqu
 
 ---
 
+
 ## English
 
-Rabbit is a lightweight and modular PHP framework designed to offer flexibility and scalability for API development. It's still in the early stages of development.
+Rabbit is a lightweight and modular PHP framework designed to offer flexibility and scalability in API development. It is in its early stages of development.
 
 ### Installation
 
@@ -194,10 +195,11 @@ Rabbit is a lightweight and modular PHP framework designed to offer flexibility 
 
 - PHP 8.x or higher
 - Composer (coming soon)
+- Install Gettext on the server for proper translation functionality [See steps](#translations)
 
 #### Installation Instructions
 
-For now, Rabbit is only available for download directly from GitHub.
+For now, Rabbit is only available for direct download from GitHub.
 
 1. Clone the repository:
 ```bash
@@ -209,44 +211,45 @@ For now, Rabbit is only available for download directly from GitHub.
    cd rabbit-framework
 ```
 
-3. Start building your project and adjust the autoload as needed.
+3. Start creating your project and adjust the autoload as needed.
 
 #### Notes
 
 > Rabbit is currently not installable via Composer. We plan to integrate Composer in future versions.
 
-> Beta versions are not recommended for secure development. They are published to be studied and to accept contributions.
+> Beta versions are not recommended for safe development. They are released for study purposes and to accept contributions.
 
 ### Features
 
-[View Changelog](./rabbitcore/docs/changelog.en.md)
+[See Changelog](./rabbitcore/docs/changelog.en.md)
 
 ### Usage
 
 #### Routes and Groups
 
-Basic route definition example:
+Basic example of route definition:
 ```php
-//Adds the /auth route to the group using the /api prefix
+// Adds the /auth route to the group using the /api prefix
 Router::group(['prefix' => '/api', 'middlewares' => []], function () {
     Router::POST('/auth', ['AuthController', 'getBearerToken']);
 });
 ```
+
 #### Middleware
 
-You can add middleware to your application to validate tokens, handle authentication, or perform other tasks. They are assigned to route groups.  
-If the middleware needs parameters to be instantiated, they should be passed in an array as shown in the example.
+You can add middleware to your application to validate tokens, handle authentication, or perform other tasks. Middleware is assigned to route groups.  
+If the middleware requires parameters for instantiation, they should be passed in an array as shown in the example.
 
-Middleware usage example:
+Example of using Middlewares:
 ```php
-//Multiple groups with the same prefix can be defined. This group adds the `TestMiddleware`
+// Multiple groups with the same prefix can be defined. This group adds the `TestMiddleware`
 Router::group(['prefix' => '/api', 'middlewares' => ['TestMiddleware']], function () {
     Router::GET('/test', ['StatusController', 'getStatus']);
 });
 ```
 
 ```php
-//Multiple groups with the same prefix can be defined. This group adds the `ParametizableMiddleware` with a `param1` parameter
+// Multiple groups with the same prefix can be defined. This group adds the `ParametizableMiddleware` with a parameter `param1`
 Router::group(['prefix' => '/api', 'middlewares' => ['ParametizableMiddleware' => ['param1']]], function () {
     Router::GET('/test', ['StatusController', 'getStatus']);
 });
@@ -254,9 +257,9 @@ Router::group(['prefix' => '/api', 'middlewares' => ['ParametizableMiddleware' =
 
 #### User Roles
 
-The Bearer Token generated when logging in with an API user has an implicit role ('api_user' by default) to apply this access restriction linked to the Bearer Token. The `RoleMiddleware` will handle permission management. Below is an example of an endpoint that does not require a Bearer Token to be called, an endpoint accessible only to the 'user_admin' role, and another endpoint accessible to all users (but that must be called with Bearer Token authentication).
+The Bearer Token generated when logging in with an API user has an implied role ('api_user' by default) to apply this access restriction linked to the Bearer Token. The RoleMiddleware handles permission management. Below is an example of an endpoint that does not require a Bearer Token to call, an endpoint accessible only to the 'user_admin' role, and another endpoint accessible to all users (but must be called with Bearer Token authentication).
 
-Example usage:
+Example of usage:
 
 - Without authentication
 ```php
@@ -265,14 +268,14 @@ Router::group(['prefix' => '/api', 'middlewares' => []], function () {
 });
 ```
 
-- With authentication, enabled only for users with the 'api_user' role
+- With authentication, enabled only for users with 'api_user' role
 ```php
 Router::group(['prefix' => '/api', 'middlewares' => ['RoleMiddleware'=>['api_user']]], function () {
     Router::GET('/test', ['StatusController', 'getStatus']);
 });
 ```
 
-- With authentication, enabled for all users.
+- With authentication, enabled for all users
 ```php
 Router::group(['prefix' => '/api', 'middlewares' => ['RoleMiddleware'=>[]]], function () {
     Router::GET('/test', ['StatusController', 'getStatus']);
@@ -284,15 +287,15 @@ Router::group(['prefix' => '/api', 'middlewares' => ['RoleMiddleware'=>[]]], fun
 Example of how to use responses with status codes. These responses can be customized.
 ```php
 . . . 
-// Get the value of parameters. In this case, the 'id' parameter contains the value '123'
+// Retrieves the value of the parameters. In this case, from the 'id' parameter which contains the value '123'
 $id = $this->request->getParam('id');
 
-//Create an array with the data that will be shown in the response
+// Creates an array with the data that will be shown in the response
 $data = [
    'id' => (int) $id
 ];
 
-//Send the $data to the Response class
+// Sends the $data to the Response class
 $this->response->withStatus200($data);
 
 . . .
@@ -301,12 +304,12 @@ $this->response->withStatus200($data);
 API Response:
 ```json
 {
-	"status": 200,
-	"title": "Success",
-	"message": "200 - Success",
-	"data": {
-		"id": 123
-	}
+    "status": 200,
+    "title": "Success",
+    "message": "200 - Success",
+    "data": {
+        "id": 123
+    }
 }
 ```
 
@@ -316,13 +319,13 @@ API Response:
 Validates if the value is a valid email address.
 
 ##### **Numeric**
-Validates if the value is a number. Accepts any numeric type, including integers and floats.
+Validates if the value is a number. Accepts any type of numeric value, including integers and floats.
 
 ##### **Date**
-Validates if the value is a valid date according to the given format (e.g., 'Y-m-d'). The default format is specified in the environment variable `DEFAULT_DATETIME_FORMAT`.
+Validates if the value is a valid date according to the given format (e.g., 'Y-m-d'). The default format is specified in the environment variable `DEFAULT_DATETIME_FORMAT`
 
 ##### **Boolean**
-Validates if the value is a boolean (`true` or `false`), or if it's a string representing a boolean value (e.g., "true", "false").
+Validates if the value is a boolean (`true` or `false`), or if it's a string that represents a boolean value (such as "true", "false").
 
 ##### **Array**
 Validates if the value is an array.
@@ -336,9 +339,16 @@ Validates if the value contains only alphabetic characters (letters, no numbers 
 ##### **AlphaNumeric**
 Validates if the value contains only alphanumeric characters (letters and numbers).
 
-### Contribute
+### Translations
+- sudo apt-get install gettext
+- Uncomment "es_ES.UTF-8 UTF-8" in `/etc/locale.gen` if necessary.
+- sudo locale-gen
+- sudo update-locale
+- msgfmt ./locale/es_ES/LC_MESSAGES/messages.po -o ./locale/es_ES/LC_MESSAGES/messages.mo
 
-If you want to contribute to Rabbit, please follow these steps:
+### Contributing
+
+If you would like to contribute to Rabbit, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/new-feature`).

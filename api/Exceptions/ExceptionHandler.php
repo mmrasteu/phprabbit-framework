@@ -23,6 +23,16 @@ class ExceptionHandler {
           }
           rabbit_debug("Validation Error: " . $e->getMessage());
           rabbit_debug("Validation Error Extra Data: " . $extraData);
+      } elseif ($e instanceof UnauthorizedException) {
+        // Maneja la excepción de validación
+        $extraData = $e->getAdditionalData();
+        if ($extraData) {
+          $extraData = json_encode($extraData['message']);
+        } else {
+          $extraData = '';
+        }
+        rabbit_debug("Unauthorized Error: " . $e->getMessage());
+        rabbit_debug("Unauthorized Error Extra Data: " . $extraData);
       } elseif ($e instanceof BaseException) {
           // Maneja cualquier otro tipo de excepción base
           rabbit_debug("Error: " . $e->getMessage());

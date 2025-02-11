@@ -14,18 +14,38 @@ class GenerateSwagger extends Command {
   }
 
   private function generateSwaggerDocumentation(){
+    // Convertir warnings en excepciones
+    set_error_handler(function($severity, $message, $file, $line) {
+        throw new \ErrorException($message, 0, $severity, $file, $line);
+    });
+
+    // Capturar Fatal Errors
+    register_shutdown_function(function() {
+        $error = error_get_last();
+        if ($error && ($error['type'] === E_ERROR || $error['type'] === E_PARSE)) {
+            rabbit_debug("Fatal Error generando Swagger: " . $error['message']);
+        }
+    });
+
     try {
-      $scanDir = BASE_PATH . '/api/Controllers';
-      // Usa la librería swagger-php para escanear las anotaciones en tus controladores
-      $openapi = Generator::scan([$scanDir]);
+        $scanDir = BASE_PATH . '/api/Controllers';
+        $openapi = Generator::scan([$scanDir]);
 
-      // Guarda la documentación en un archivo JSON
-      $swaggerFile = BASE_PATH . '/public/swagger.json';
-      file_put_contents($swaggerFile, $openapi->toJson());
+        // Verificar si Swagger encontró errores
+        if (empty($openapi->paths)) {
+            throw new BaseException("Swagger-php no encontró endpoints o hubo un error en las anotaciones.");
+        }
 
-      rabbit_debug("La documentación Swagger ha sido generada`", true);
+        $swaggerFile = BASE_PATH . '/public/swagger.json';
+        file_put_contents($swaggerFile, $openapi->toJson());
+
+        rabbit_debug("La documentación Swagger ha sido generada", true);
     } catch(Exception $e){
-      throw new BaseException($e);
+        rabbit_debug("Error generando Swagger: " . $e->getMessage());
+        throw new BaseException($e);
+    } finally {
+        // Restaurar el manejador de errores original
+        restore_error_handler();
     }
   }
 
