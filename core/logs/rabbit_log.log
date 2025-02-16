@@ -1,0 +1,229 @@
+[2025-02-11 17:51:00] - La documentación Swagger ha sido generada
+[2025-02-11 17:51:33] - La documentación Swagger ha sido generada
+[2025-02-11 17:53:03] - Fatal Error generando Swagger: Uncaught ErrorException: [Syntax Error] Expected Doctrine\Common\Annotations\DocLexer::T_CLOSE_PARENTHESIS, got 'API' in \Rabbit\Controllers\StatusController->getStatus() in /home/mmrasteu/code/phprabbit-framework/api/Controllers/StatusController.php on line 19:15 in /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php:31
+Stack trace:
+#0 [internal function]: Rabbit\CLI\Commands\GenerateSwagger->Rabbit\CLI\Commands\{closure}()
+#1 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php(31): trigger_error()
+#2 /home/mmrasteu/code/phprabbit-framework/vendor/psr/log/src/LoggerTrait.php(50): OpenApi\Loggers\DefaultLogger->log()
+#3 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockParser.php(79): Psr\Log\AbstractLogger->error()
+#4 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockAnnotationFactory.php(60): OpenApi\Analysers\DocBlockParser->fromComment()
+#5 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(139): OpenApi\Analysers\DocBlockAnnotationFactory->build()
+#6 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(63): OpenApi\Analysers\ReflectionAnalyser->analyzeFqdn()
+#7 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(537): OpenApi\Analysers\ReflectionAnalyser->fromFile()
+#8 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(534): OpenApi\Generator->scanSources()
+#9 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(497): OpenApi\Generator->scanSources()
+#10 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(447): OpenApi\Generator->generate()
+#11 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(32): OpenApi\Generator::scan()
+#12 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(13): Rabbit\CLI\Commands\GenerateSwagger->generateSwaggerDocumentation()
+#13 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(136): Rabbit\CLI\Commands\GenerateSwagger->handleGenerateSwaggerCommand()
+#14 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(54): Rabbit\CLI\Console->generateSwagger()
+#15 /home/mmrasteu/code/phprabbit-framework/rabbit(8): Rabbit\CLI\Console->run()
+#16 {main}
+  thrown
+[2025-02-11 17:54:38] - La documentación Swagger ha sido generada
+[2025-02-11 17:56:17] - Fatal Error generando Swagger: Uncaught ErrorException: [Syntax Error] Expected Doctrine\Common\Annotations\DocLexer::T_CLOSE_PARENTHESIS, got 'API' in \Rabbit\Controllers\StatusController->getStatus() in /home/mmrasteu/code/phprabbit-framework/api/Controllers/StatusController.php on line 19:15 in /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php:31
+Stack trace:
+#0 [internal function]: Rabbit\CLI\Commands\GenerateSwagger->Rabbit\CLI\Commands\{closure}()
+#1 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php(31): trigger_error()
+#2 /home/mmrasteu/code/phprabbit-framework/vendor/psr/log/src/LoggerTrait.php(50): OpenApi\Loggers\DefaultLogger->log()
+#3 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockParser.php(79): Psr\Log\AbstractLogger->error()
+#4 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockAnnotationFactory.php(60): OpenApi\Analysers\DocBlockParser->fromComment()
+#5 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(139): OpenApi\Analysers\DocBlockAnnotationFactory->build()
+#6 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(63): OpenApi\Analysers\ReflectionAnalyser->analyzeFqdn()
+#7 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(537): OpenApi\Analysers\ReflectionAnalyser->fromFile()
+#8 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(534): OpenApi\Generator->scanSources()
+#9 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(497): OpenApi\Generator->scanSources()
+#10 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(447): OpenApi\Generator->generate()
+#11 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(33): OpenApi\Generator::scan()
+#12 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(13): Rabbit\CLI\Commands\GenerateSwagger->generateSwaggerDocumentation()
+#13 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(136): Rabbit\CLI\Commands\GenerateSwagger->handleGenerateSwaggerCommand()
+#14 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(54): Rabbit\CLI\Console->generateSwagger()
+#15 /home/mmrasteu/code/phprabbit-framework/rabbit(8): Rabbit\CLI\Console->run()
+#16 {main}
+  thrown
+[2025-02-11 18:09:29] - Error: Unauthorized
+[2025-02-11 18:12:02] - Fatal Error generando Swagger: Uncaught ErrorException: [Semantical Error] Couldn't find constant eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9, \Rabbit\Controllers\AuthController->getBearerToken() in /home/mmrasteu/code/phprabbit-framework/api/Controllers/AuthController.php on line 68.; file=/home/mmrasteu/code/phprabbit-framework/api/Controllers/AuthController.php in /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php:31
+Stack trace:
+#0 [internal function]: Rabbit\CLI\Commands\GenerateSwagger->Rabbit\CLI\Commands\{closure}()
+#1 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php(31): trigger_error()
+#2 /home/mmrasteu/code/phprabbit-framework/vendor/psr/log/src/LoggerTrait.php(50): OpenApi\Loggers\DefaultLogger->log()
+#3 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockParser.php(81): Psr\Log\AbstractLogger->error()
+#4 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockAnnotationFactory.php(60): OpenApi\Analysers\DocBlockParser->fromComment()
+#5 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(139): OpenApi\Analysers\DocBlockAnnotationFactory->build()
+#6 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(63): OpenApi\Analysers\ReflectionAnalyser->analyzeFqdn()
+#7 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(537): OpenApi\Analysers\ReflectionAnalyser->fromFile()
+#8 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(534): OpenApi\Generator->scanSources()
+#9 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(497): OpenApi\Generator->scanSources()
+#10 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(447): OpenApi\Generator->generate()
+#11 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(32): OpenApi\Generator::scan()
+#12 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(13): Rabbit\CLI\Commands\GenerateSwagger->generateSwaggerDocumentation()
+#13 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(136): Rabbit\CLI\Commands\GenerateSwagger->handleGenerateSwaggerCommand()
+#14 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(54): Rabbit\CLI\Console->generateSwagger()
+#15 /home/mmrasteu/code/phprabbit-framework/rabbit(8): Rabbit\CLI\Console->run()
+#16 {main}
+  thrown
+[2025-02-11 18:12:34] - Fatal Error generando Swagger: Uncaught ErrorException: [Syntax Error] Expected Doctrine\Common\Annotations\DocLexer::T_CLOSE_PARENTHESIS, got 'API' in \Rabbit\Controllers\StatusController->getStatus() in /home/mmrasteu/code/phprabbit-framework/api/Controllers/StatusController.php on line 19:15 in /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php:31
+Stack trace:
+#0 [internal function]: Rabbit\CLI\Commands\GenerateSwagger->Rabbit\CLI\Commands\{closure}()
+#1 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php(31): trigger_error()
+#2 /home/mmrasteu/code/phprabbit-framework/vendor/psr/log/src/LoggerTrait.php(50): OpenApi\Loggers\DefaultLogger->log()
+#3 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockParser.php(79): Psr\Log\AbstractLogger->error()
+#4 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockAnnotationFactory.php(60): OpenApi\Analysers\DocBlockParser->fromComment()
+#5 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(139): OpenApi\Analysers\DocBlockAnnotationFactory->build()
+#6 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(63): OpenApi\Analysers\ReflectionAnalyser->analyzeFqdn()
+#7 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(537): OpenApi\Analysers\ReflectionAnalyser->fromFile()
+#8 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(534): OpenApi\Generator->scanSources()
+#9 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(497): OpenApi\Generator->scanSources()
+#10 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(447): OpenApi\Generator->generate()
+#11 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(32): OpenApi\Generator::scan()
+#12 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(13): Rabbit\CLI\Commands\GenerateSwagger->generateSwaggerDocumentation()
+#13 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(136): Rabbit\CLI\Commands\GenerateSwagger->handleGenerateSwaggerCommand()
+#14 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(54): Rabbit\CLI\Console->generateSwagger()
+#15 /home/mmrasteu/code/phprabbit-framework/rabbit(8): Rabbit\CLI\Console->run()
+#16 {main}
+  thrown
+[2025-02-11 18:12:46] - Fatal Error generando Swagger: Uncaught ErrorException: [Syntax Error] Expected Doctrine\Common\Annotations\DocLexer::T_CLOSE_PARENTHESIS, got 'API' in \Rabbit\Controllers\StatusController->getStatus() in /home/mmrasteu/code/phprabbit-framework/api/Controllers/StatusController.php on line 19:15 in /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php:31
+Stack trace:
+#0 [internal function]: Rabbit\CLI\Commands\GenerateSwagger->Rabbit\CLI\Commands\{closure}()
+#1 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php(31): trigger_error()
+#2 /home/mmrasteu/code/phprabbit-framework/vendor/psr/log/src/LoggerTrait.php(50): OpenApi\Loggers\DefaultLogger->log()
+#3 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockParser.php(79): Psr\Log\AbstractLogger->error()
+#4 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockAnnotationFactory.php(60): OpenApi\Analysers\DocBlockParser->fromComment()
+#5 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(139): OpenApi\Analysers\DocBlockAnnotationFactory->build()
+#6 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(63): OpenApi\Analysers\ReflectionAnalyser->analyzeFqdn()
+#7 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(537): OpenApi\Analysers\ReflectionAnalyser->fromFile()
+#8 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(534): OpenApi\Generator->scanSources()
+#9 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(497): OpenApi\Generator->scanSources()
+#10 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(447): OpenApi\Generator->generate()
+#11 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(32): OpenApi\Generator::scan()
+#12 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(13): Rabbit\CLI\Commands\GenerateSwagger->generateSwaggerDocumentation()
+#13 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(136): Rabbit\CLI\Commands\GenerateSwagger->handleGenerateSwaggerCommand()
+#14 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(54): Rabbit\CLI\Console->generateSwagger()
+#15 /home/mmrasteu/code/phprabbit-framework/rabbit(8): Rabbit\CLI\Console->run()
+#16 {main}
+  thrown
+[2025-02-11 18:16:40] - Fatal Error generando Swagger: Uncaught ErrorException: [Syntax Error] Expected Doctrine\Common\Annotations\DocLexer::T_CLOSE_PARENTHESIS, got 'API' in \Rabbit\Controllers\StatusController->getStatus() in /home/mmrasteu/code/phprabbit-framework/api/Controllers/StatusController.php on line 19:15 in /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php:31
+Stack trace:
+#0 [internal function]: Rabbit\CLI\Commands\GenerateSwagger->Rabbit\CLI\Commands\{closure}()
+#1 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php(31): trigger_error()
+#2 /home/mmrasteu/code/phprabbit-framework/vendor/psr/log/src/LoggerTrait.php(50): OpenApi\Loggers\DefaultLogger->log()
+#3 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockParser.php(79): Psr\Log\AbstractLogger->error()
+#4 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockAnnotationFactory.php(60): OpenApi\Analysers\DocBlockParser->fromComment()
+#5 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(139): OpenApi\Analysers\DocBlockAnnotationFactory->build()
+#6 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(63): OpenApi\Analysers\ReflectionAnalyser->analyzeFqdn()
+#7 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(537): OpenApi\Analysers\ReflectionAnalyser->fromFile()
+#8 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(534): OpenApi\Generator->scanSources()
+#9 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(497): OpenApi\Generator->scanSources()
+#10 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(447): OpenApi\Generator->generate()
+#11 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(32): OpenApi\Generator::scan()
+#12 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(13): Rabbit\CLI\Commands\GenerateSwagger->generateSwaggerDocumentation()
+#13 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(136): Rabbit\CLI\Commands\GenerateSwagger->handleGenerateSwaggerCommand()
+#14 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(54): Rabbit\CLI\Console->generateSwagger()
+#15 /home/mmrasteu/code/phprabbit-framework/rabbit(8): Rabbit\CLI\Console->run()
+#16 {main}
+  thrown
+[2025-02-11 18:17:06] - La documentación Swagger ha sido generada
+[2025-02-11 18:19:55] - Unauthorized Error: Invalid or expired token
+[2025-02-11 18:19:55] - Unauthorized Error Extra Data: 
+[2025-02-11 18:21:02] - La documentación Swagger ha sido generada
+[2025-02-11 18:21:28] - Fatal Error generando Swagger: Uncaught ErrorException: @OA\Items() is required when @OA\Property(property="details") has type "array" in \Rabbit\Controllers\StatusController->getStatus() in /home/mmrasteu/code/phprabbit-framework/api/Controllers/StatusController.php on line 49 in /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php:31
+Stack trace:
+#0 [internal function]: Rabbit\CLI\Commands\GenerateSwagger->Rabbit\CLI\Commands\{closure}()
+#1 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php(31): trigger_error()
+#2 /home/mmrasteu/code/phprabbit-framework/vendor/psr/log/src/LoggerTrait.php(61): OpenApi\Loggers\DefaultLogger->log()
+#3 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Schema.php(504): Psr\Log\AbstractLogger->warning()
+#4 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Schema->validate()
+#5 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#6 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#7 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Schema.php(517): OpenApi\Annotations\AbstractAnnotation->validate()
+#8 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Schema->validate()
+#9 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#10 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#11 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Schema.php(517): OpenApi\Annotations\AbstractAnnotation->validate()
+#12 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Schema->validate()
+#13 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#14 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\AbstractAnnotation->validate()
+#15 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#16 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#17 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Response.php(121): OpenApi\Annotations\AbstractAnnotation->validate()
+#18 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Response->validate()
+#19 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#20 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#21 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Operation.php(223): OpenApi\Annotations\AbstractAnnotation->validate()
+#22 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Operation->validate()
+#23 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#24 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\AbstractAnnotation->validate()
+#25 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#26 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#27 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/OpenApi.php(170): OpenApi\Annotations\AbstractAnnotation->validate()
+#28 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysis.php(440): OpenApi\Annotations\OpenApi->validate()
+#29 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(511): OpenApi\Analysis->validate()
+#30 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(447): OpenApi\Generator->generate()
+#31 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(32): OpenApi\Generator::scan()
+#32 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(13): Rabbit\CLI\Commands\GenerateSwagger->generateSwaggerDocumentation()
+#33 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(136): Rabbit\CLI\Commands\GenerateSwagger->handleGenerateSwaggerCommand()
+#34 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(54): Rabbit\CLI\Console->generateSwagger()
+#35 /home/mmrasteu/code/phprabbit-framework/rabbit(8): Rabbit\CLI\Console->run()
+#36 {main}
+  thrown
+[2025-02-11 18:21:42] - Fatal Error generando Swagger: Uncaught ErrorException: @OA\Items() is required when @OA\Property(property="details") has type "array" in \Rabbit\Controllers\StatusController->getStatus() in /home/mmrasteu/code/phprabbit-framework/api/Controllers/StatusController.php on line 49 in /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php:31
+Stack trace:
+#0 [internal function]: Rabbit\CLI\Commands\GenerateSwagger->Rabbit\CLI\Commands\{closure}()
+#1 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php(31): trigger_error()
+#2 /home/mmrasteu/code/phprabbit-framework/vendor/psr/log/src/LoggerTrait.php(61): OpenApi\Loggers\DefaultLogger->log()
+#3 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Schema.php(504): Psr\Log\AbstractLogger->warning()
+#4 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Schema->validate()
+#5 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#6 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#7 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Schema.php(517): OpenApi\Annotations\AbstractAnnotation->validate()
+#8 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Schema->validate()
+#9 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#10 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#11 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Schema.php(517): OpenApi\Annotations\AbstractAnnotation->validate()
+#12 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Schema->validate()
+#13 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#14 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\AbstractAnnotation->validate()
+#15 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#16 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#17 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Response.php(121): OpenApi\Annotations\AbstractAnnotation->validate()
+#18 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Response->validate()
+#19 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#20 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#21 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/Operation.php(223): OpenApi\Annotations\AbstractAnnotation->validate()
+#22 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\Operation->validate()
+#23 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#24 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(592): OpenApi\Annotations\AbstractAnnotation->validate()
+#25 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(598): OpenApi\Annotations\AbstractAnnotation::_validate()
+#26 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/AbstractAnnotation.php(565): OpenApi\Annotations\AbstractAnnotation::_validate()
+#27 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Annotations/OpenApi.php(170): OpenApi\Annotations\AbstractAnnotation->validate()
+#28 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysis.php(440): OpenApi\Annotations\OpenApi->validate()
+#29 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(511): OpenApi\Analysis->validate()
+#30 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(447): OpenApi\Generator->generate()
+#31 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(32): OpenApi\Generator::scan()
+#32 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(13): Rabbit\CLI\Commands\GenerateSwagger->generateSwaggerDocumentation()
+#33 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(136): Rabbit\CLI\Commands\GenerateSwagger->handleGenerateSwaggerCommand()
+#34 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(54): Rabbit\CLI\Console->generateSwagger()
+#35 /home/mmrasteu/code/phprabbit-framework/rabbit(8): Rabbit\CLI\Console->run()
+#36 {main}
+  thrown
+[2025-02-11 18:21:47] - Fatal Error generando Swagger: Uncaught ErrorException: [Syntax Error] Expected Doctrine\Common\Annotations\DocLexer::T_CLOSE_PARENTHESIS, got end of string in \Rabbit\Controllers\StatusController->getStatus() in /home/mmrasteu/code/phprabbit-framework/api/Controllers/StatusController.php on line 49.; file=/home/mmrasteu/code/phprabbit-framework/api/Controllers/StatusController.php in /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php:31
+Stack trace:
+#0 [internal function]: Rabbit\CLI\Commands\GenerateSwagger->Rabbit\CLI\Commands\{closure}()
+#1 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Loggers/DefaultLogger.php(31): trigger_error()
+#2 /home/mmrasteu/code/phprabbit-framework/vendor/psr/log/src/LoggerTrait.php(50): OpenApi\Loggers\DefaultLogger->log()
+#3 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockParser.php(81): Psr\Log\AbstractLogger->error()
+#4 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/DocBlockAnnotationFactory.php(60): OpenApi\Analysers\DocBlockParser->fromComment()
+#5 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(139): OpenApi\Analysers\DocBlockAnnotationFactory->build()
+#6 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Analysers/ReflectionAnalyser.php(63): OpenApi\Analysers\ReflectionAnalyser->analyzeFqdn()
+#7 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(537): OpenApi\Analysers\ReflectionAnalyser->fromFile()
+#8 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(534): OpenApi\Generator->scanSources()
+#9 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(497): OpenApi\Generator->scanSources()
+#10 /home/mmrasteu/code/phprabbit-framework/vendor/zircote/swagger-php/src/Generator.php(447): OpenApi\Generator->generate()
+#11 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(32): OpenApi\Generator::scan()
+#12 /home/mmrasteu/code/phprabbit-framework/api/CLI/Commands/GenerateSwagger.php(13): Rabbit\CLI\Commands\GenerateSwagger->generateSwaggerDocumentation()
+#13 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(136): Rabbit\CLI\Commands\GenerateSwagger->handleGenerateSwaggerCommand()
+#14 /home/mmrasteu/code/phprabbit-framework/api/CLI/Console.php(54): Rabbit\CLI\Console->generateSwagger()
+#15 /home/mmrasteu/code/phprabbit-framework/rabbit(8): Rabbit\CLI\Console->run()
+#16 {main}
+  thrown
+[2025-02-11 18:22:02] - La documentación Swagger ha sido generada

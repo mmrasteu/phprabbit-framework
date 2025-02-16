@@ -1,0 +1,214 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Mi API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/auth": {
+            "post": {
+                "tags": [
+                    "API Auth"
+                ],
+                "summary": "Autenticar usuario y obtener JWT",
+                "operationId": "4e0d99a34986aea5c6ac16b0acb16445",
+                "responses": {
+                    "200": {
+                        "description": "Inicio de sesión exitoso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "200 - Success"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "userId": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "auth": {
+                                                    "type": "string",
+                                                    "example": "**************************"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Credenciales inválidas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 401
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "Unauthorized"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "401 - Unauthorized"
+                                        },
+                                        "errors": {
+                                            "properties": {
+                                                "message": {
+                                                    "type": "string",
+                                                    "example": ""
+                                                },
+                                                "details": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "example": ""
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BasicAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/status": {
+            "get": {
+                "tags": [
+                    "API Endpoints"
+                ],
+                "summary": "Endpoint de estado del servidor",
+                "operationId": "e62403d7f85832f216ca3c34101eae49",
+                "responses": {
+                    "200": {
+                        "description": "Inicio de sesión exitoso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 200
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "200 - Success"
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "serverStatus": {
+                                                    "type": "string",
+                                                    "example": "OK"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Credenciales inválidas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "integer",
+                                            "example": 401
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "Unauthorized"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "401 - Unauthorized"
+                                        },
+                                        "errors": {
+                                            "properties": {
+                                                "message": {
+                                                    "type": "string",
+                                                    "example": ""
+                                                },
+                                                "details": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "example": ""
+                                                    }
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "BasicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            },
+            "BearerAuth": {
+                "type": "http",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "API Auth",
+            "description": "API Auth"
+        },
+        {
+            "name": "API Endpoints",
+            "description": "API Endpoints"
+        }
+    ]
+}

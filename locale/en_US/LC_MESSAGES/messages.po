@@ -1,0 +1,13 @@
+# Archivo: /locale/en_US/LC_MESSAGES/messages.po
+
+msgid "Command not found"
+msgstr "Command not found"
+
+msgid "An error has occurred with the database"
+msgstr "An error has occurred with the database."
+
+msgid "An error has occurred"
+msgstr "An error has occurred"
+
+msgid "There are undefined environment variables"
+msgstr "There are undefined environment variables"

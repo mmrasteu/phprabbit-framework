@@ -239,10 +239,10 @@ interface ResponseInterface {
      * @param int $status Código de estado HTTP.
      * @return Render La instancia de la clase Render con los datos de la respuesta.
      */
-    public function withCustomStatus(
-        array $data, 
-        string $message, 
-        string $title, 
-        int $status
+    public function withStatus(
+        int $status,
+        string $title,
+        string $message,
+        array $data
     ): Render;
 }

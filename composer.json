@@ -11,7 +11,8 @@
     "autoload": {
         "psr-4": {
             "Rabbit\\": "api/",
-            "Rabbit\\Validate\\ValidationRules\\": "api/Validators/ValidationRules/"
+            "Rabbit\\Validate\\ValidationRules\\": "api/Validators/ValidationRules/",
+            "Config\\": "core/config/"
         }
     },
     "authors": [
@@ -23,8 +24,10 @@
     "require": {
         "php": ">=8.0",
         "firebase/php-jwt": "^6.10",
-        "illuminate/database": "^11.33",
-        "vlucas/phpdotenv": "^5.6"
+        "illuminate/database": "^11.40",
+        "vlucas/phpdotenv": "^5.6",
+        "nesbot/carbon": "^3.8",
+        "darkaonline/l5-swagger": "^8.6"
     },
     "bin": [
         "rabbit"
