@@ -8,19 +8,19 @@
 - **Composer**: Implementar instalación del framework desde Composer
 - **Docuemntación**: Publicación de la documentación final del framework
 
-## [0.4.0] - Pendiente de fecha de salida
+## [0.4.0] - 2025-08-30
 ### Will add
 - **Documentación**: Generar documentacion de la API con Swagger.
 - **Visor de estado**: Implementar un comando que muestre que controladores estan enlazados con endpoints.
 
-## [0.3.0] - Pendiente de fecha de salida
+## [0.3.0] - 2025-06-29
 ### Will add
 - **Caché:** Implementación de respuestas en caché.
 - **Rate limit:** Implementación de logica para aplicar rate limit personalizado a los endpoints/controladores.
 - **Testing**: Implementar testing con PHPUnit y crear algunas pruebas de ejemplo.
 - **Manejo de excepciones:** Implementación de manejo total de excepciones personalizadas.
 - **Comandos `php rabbit`:** Más comandos básicos usando `php rabbit [comando]`.
-- **Traducciones:** Traducido al ingles y al español de los mensajes del framework.
+- **Traducciones:** Traducción al ingles y al español de los mensajes del framework. Creación de un sistema propio de traducciones para no tener que realizar instalaciones extras para poder utilizar la funcion `__t('mensaje');`
 
 ## [0.2.0] - 2025-02-16
 ### Added
@@ -31,7 +31,7 @@
 - **Roles:** Implementación total de roles de usuarios API.
 - **Traducciones:** Implementación de la lógica de traducciones con `_t('mensaje');`
 - **Log:** Implementación del log del framework.
-- **Swagger:** IMplementación de Swagger para generar documentación de la API. 
+- **Swagger:** Implementación de Swagger para generar documentación de la API. 
 
 ## [0.1.0] - 2025-01-10
 ### Added
