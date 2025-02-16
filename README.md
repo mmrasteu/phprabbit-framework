@@ -42,7 +42,7 @@ Por ahora, Rabbit solo está disponible para ser descargado directamente desde G
 
 ### Características
 
-[Ver Changelog](./rabbitcore/docs/changelog.es.md)
+[Ver Changelog](./core/docs/changelog.es.md)
 
 ### Uso
 
@@ -221,7 +221,7 @@ For now, Rabbit is only available for direct download from GitHub.
 
 ### Features
 
-[See Changelog](./rabbitcore/docs/changelog.en.md)
+[See Changelog](./core/docs/changelog.en.md)
 
 ### Usage
 
