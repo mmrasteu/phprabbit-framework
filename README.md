@@ -341,7 +341,6 @@ Validates if the value contains only alphanumeric characters (letters and number
 
 ### Translations
 - sudo apt-get install gettext
-- Uncomment "es_ES.UTF-8 UTF-8" in `/etc/locale.gen` if necessary.
 - sudo locale-gen
 - sudo update-locale
 - msgfmt ./locale/es_ES/LC_MESSAGES/messages.po -o ./locale/es_ES/LC_MESSAGES/messages.mo
