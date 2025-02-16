@@ -23,9 +23,9 @@ Rabbit es un framework PHP ligero y modular, diseñado para ofrecer flexibilidad
 Por ahora, Rabbit solo está disponible para ser descargado directamente desde GitHub.
 
 1. Clona el repositorio:
-```bash
+   ```bash
    git clone https://github.com/mmrasteu/phprabbit-framework.git
-```
+   ```
 
 2. Accede a la carpeta del proyecto:
 ```bash
