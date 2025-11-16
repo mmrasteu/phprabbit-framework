@@ -35,7 +35,8 @@ class Migrate extends Command {
                 $table->string('migration');
                 $table->timestamps();
             });
-            echo "Tabla '$this->migrationTable' creada.\n";
+            echo t_("console.success.create_table", ["$this->migrationTable"]) . "\n";
+            
         }
     }
 
@@ -43,7 +44,7 @@ class Migrate extends Command {
     protected function runMigration($migrationName) {
         // Verificar si la migración ya ha sido ejecutada
         if ($this->migrationExecuted($migrationName)) {
-            echo "La migración '$migrationName' ya ha sido ejecutada.\n";
+            echo _t("console.warning.exec_migration", [$migrationName]) . "\n";
             return;
         }
 
@@ -63,9 +64,9 @@ class Migrate extends Command {
 
             // Registrar la migración como ejecutada
             $this->markMigrationAsExecuted($migrationName);
-            echo "Migración '$migrationName' ejecutada.\n";
+            echo _("console.success.exec_migration", [$migrationName]) . "\n";
         } else {
-            echo "La migración '$migrationName' no existe.\n";
+            echo _t("console.error.migration_not_exist", [$migrationName]) . "\n";
         }
     }
 

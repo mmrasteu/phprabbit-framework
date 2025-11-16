@@ -1,0 +1,77 @@
+{
+    "generic": {
+        "success": [],
+        "error": {
+            "standard": "An error has occurred",
+            "unknown": "An unknown error has occurred",
+            "env_vars": "There are undefined environment variables"
+        },
+        "warning": [],
+        "info": {
+            "env_title": "Enviroment"
+        }
+    },
+    "console": {
+        "success": {
+            "create_validator": "Validator created successfully.",
+            "create_model": "Model '%modelClassName%' created successfully.",
+            "create_migration": "Migration '%migrationName%' created successfully.",
+            "create_table": "Table '%migrationTable%' created successfully.",
+            "exec_migration": "Migration '%migrationName%' executed successfully."
+        },
+        "error": {
+            "not_found": "Command not found",
+            "migration_not_exist": "La migración '%migrationName%' no existe."
+        },
+        "warning": {
+            "exec_migration": "The migration '%migrationName%' has already been executed."
+        },
+        "info": {
+            "create_migration": "Remember to add the necessary fields to the migration before running it with `php rabbit migrate`",
+            "help": "Available commands:\n\tmake controller {name}\n\t\tCreates a controller\n\tmake validator {name}\n\t\tCreates a validator\n\tmake model {name} [--no-migration]\n\t\tCreates a model with its associated migration (with --no-migration the migration is not created)\n\tmake migration {name}\n\t\tCreates a migration\n\tserve\n\t\tStarts a local test server\n\thelp\n\t\tDisplays this list of commands\n\ti18n addLang {xx_XX} [--copyFrom[{xx_XX}]]\n\t\tAdds a new language to the system (optionally copying the structure from another)\n\ti18n addSection {section_name}\n\t\tAdds a new section to all languages\n"
+        }
+    },
+    "router": {
+        "success": [],
+        "error": [],
+        "warning": [],
+        "info": {
+            "registered_title": "Registered routes:",
+            "registered_routes": "  [%routeMethod%] %routeUri% %routeAction_0%:%routeAction_1%",
+            "registered_middlewares": "        Middlewares: %middlewareList%",
+            "grouped_title": "Routes grouped by group: ",
+            "grouped_group": "Group: '%groupName%'"
+        }
+    },
+    "log": {
+        "success": {
+            "clear": "The log file has been cleared"
+        },
+        "error": {
+            "read": "Could not read the log file",
+            "clear": "Could not clear the log file"
+        },
+        "warning": [],
+        "info": []
+    },
+    "database": {
+        "success": [],
+        "error": {
+            "standard": "An error has occurred with the database"
+        },
+        "warning": [],
+        "info": []
+    },
+    "test": {
+        "success": [],
+        "error": [],
+        "warning": [],
+        "info": []
+    },
+    "nuevaSeccion": {
+        "success": [],
+        "error": [],
+        "warning": [],
+        "info": []
+    }
+}

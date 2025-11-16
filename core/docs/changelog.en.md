@@ -20,7 +20,7 @@
 - **Testing**: Implement testing with PHPUnit and create some example tests.
 - **Exception handling:** Full implementation of custom exception handling.
 - **`php rabbit` commands:** More basic commands using `php rabbit [command]`.
-- **Translations:** Translation of framework messages into English and Spanish. Creation of a custom translation system to avoid extra installations to use the function `__t('message');`.
+- **Translations:** Translation of framework messages into English and Spanish. Creation of a custom translation system to avoid extra installations to use the function `_t('message');`.
 
 ## [0.2.0] - 2025-02-16
 ### Added
@@ -29,7 +29,7 @@
 - **`php rabbit` commands:** More basic commands using `php rabbit [command]`.
 - **Exception handling:** Partial implementation of custom exception handling.
 - **Roles:** Full implementation of API user roles.
-- **Translations:** Implementation of translation logic with `_t('message');`.
+- **Translations:** Implementation of translation logic with `_t('message', []);`.
 - **Log:** Implementation of the framework log.
 - **Swagger:** Implementation of Swagger to generate API documentation.
 

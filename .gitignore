@@ -1,3 +1,6 @@
+docker/*
+.devcontainer/*
+*.log
 /vendor/
 .env
 DevelopReadme.md

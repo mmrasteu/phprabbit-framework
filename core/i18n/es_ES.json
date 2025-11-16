@@ -1,0 +1,76 @@
+{
+    "generic": {
+        "success": [],
+        "error": {
+            "standard": "Ha ocurrido un error",
+            "unknown": "Ha ocurrido un error desconocido",
+            "env_vars": "Hay variables de entorno no definidas"
+        },
+        "warning": [],
+        "info": {
+            "env_title": "Entorno"
+        }
+    },
+    "console": {
+        "success": {
+            "create_validator": "Validador creado correctamente.",
+            "create_model": "Modelo '%modelClassName%' creado satisfactoriamente.",
+            "create_migration": "Migración '%migrationName%' creada satisfactoriamente.",
+            "create_table": "Tabla '%migrationTable%' creada satisfactoriamente.",
+            "exec_migration": "Migración '%migrationName%' ejecutada satisfactoriamente."
+        },
+        "error": {
+            "not_found": "Comando no encontrado"
+        },
+        "warning": {
+            "exec_migration": "La migración '%migrationName%' ya ha sido ejecutada."
+        },
+        "info": {
+            "create_migration": "Recuerda añadir los campos que necesites a la migración antes de ejectuarla con `php rabbit migrate`",
+            "help": "Comandos disponibles:\n\tmake controller {nombre}\n\t\tCrea un controlador\n\tmake validator {nombre}\n\t\tCrea un validador\n\t\tCrea un modelo con su migración asociada (Con --no-migration no se crea la migración)\n\tmake migration {nombre}\n\t\tCrea una migración\n\tserve\n\t\tInicia un servidor local para pruebas\n\thelp\n\t\tMuestra esta lista de comandos\n\ti18n addLang {xx_XX} [--copyFrom[{xx_XX}]]\n\t\tAñade un idioma nuevo al sistema (opcionalmente copiando la estructura de otro)\n\ti18n addSection {nombre sección}\n\t\tAñade una sección nueva a todos los idiomas\n\tmake model {nombre} [--no-migration]\n"
+        }
+    },
+    "router": {
+        "success": [],
+        "error": [],
+        "warning": [],
+        "info": {
+            "registered_title": "Rutas registradas:",
+            "registered_routes": "  [%routeMethod%] %routeUri% %routeAction_0%:%routeAction_1%",
+            "registered_middlewares": "        Middlewares: %middlewareList%",
+            "grouped_title": "Rutas agrupadas por grupo: ",
+            "grouped_group": "Grupo: '%groupName%'"
+        }
+    },
+    "log": {
+        "success": {
+            "clear": "El archivo de log ha sido limpiado"
+        },
+        "error": {
+            "read": "No se pudo leer el archivo de log",
+            "clear": "No se pudo limpiar el archivo de log"
+        },
+        "warning": [],
+        "info": []
+    },
+    "database": {
+        "success": [],
+        "error": {
+            "standard": "Ha ocurrido un error con la base de datos"
+        },
+        "warning": [],
+        "info": []
+    },
+    "test": {
+        "success": [],
+        "error": [],
+        "warning": [],
+        "info": []
+    },
+    "nuevaSeccion": {
+        "success": [],
+        "error": [],
+        "warning": [],
+        "info": []
+    }
+}

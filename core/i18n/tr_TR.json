@@ -1,0 +1,76 @@
+{
+    "generic": {
+        "success": [],
+        "error": {
+            "standard": "",
+            "unknown": "",
+            "env_vars": ""
+        },
+        "warning": [],
+        "info": {
+            "env_title": ""
+        }
+    },
+    "console": {
+        "success": {
+            "create_validator": "",
+            "create_model": "",
+            "create_migration": "",
+            "create_table": "",
+            "exec_migration": ""
+        },
+        "error": {
+            "not_found": ""
+        },
+        "warning": {
+            "exec_migration": ""
+        },
+        "info": {
+            "create_migration": "",
+            "help": ""
+        }
+    },
+    "router": {
+        "success": [],
+        "error": [],
+        "warning": [],
+        "info": {
+            "registered_title": "",
+            "registered_routes": "",
+            "registered_middlewares": "",
+            "grouped_title": "",
+            "grouped_group": ""
+        }
+    },
+    "log": {
+        "success": {
+            "clear": ""
+        },
+        "error": {
+            "read": "",
+            "clear": ""
+        },
+        "warning": [],
+        "info": []
+    },
+    "database": {
+        "success": [],
+        "error": {
+            "standard": ""
+        },
+        "warning": [],
+        "info": []
+    },
+    "test": {
+        "success": [],
+        "error": [],
+        "warning": [],
+        "info": []
+    },
+    "nuevaSeccion": {
+        "success": [],
+        "error": [],
+        "warning": [],
+        "info": []
+    }
+}

@@ -1,20 +1,39 @@
 <?php
+use Rabbit\Core\i18n;
 
-function _t($msgid) {
-    // Obtener el idioma activo
-    $locale = setlocale(LC_ALL, 0); // Obtener el idioma actual configurado (retorna el locale)
+function _t($key, $params = []) {
+    $msg = i18n::get($key);
 
-    $default_locale = 'en_US';
-
-    // Intentar obtener la traducción
-    $translated = _($msgid);
-    
-    // Solo registrar el error si la traducción no se encuentra y el idioma no es el idioma base
-    if ($translated === $msgid && $locale !== $default_locale) {
-        // Registrar un mensaje en el log indicando que falta la traducción
-        rabbit_debug("Translation not found for: '$msgid' in language '$locale'");
+        // Detectar tipo de mensaje por la key
+    $color = "\033[0m"; // default
+    if (str_starts_with($key, 'console.success')) {
+        $color = "\033[32m"; // verde
+    } elseif (str_starts_with($key, 'console.error')) {
+        $color = "\033[31m"; // rojo
+    } elseif (str_starts_with($key, 'console.warning')) {
+        $color = "\033[33m"; // amarillo
     }
 
-    // Retornar la traducción (o el mensaje original si no se encontró)
-    return $translated;
+    $reset = "\033[0m";
+    if (str_starts_with($key, 'console.')){
+        $reset .= "\n";
+    }
+
+    return $color . replaceParams($msg, $params) . $reset;
+}
+
+function replaceParams(string $msg, array $values): string
+{
+    $pattern = '/%([a-zA-Z0-9_]+)%/';
+    $index   = 0;
+
+    return preg_replace_callback($pattern, function($m) use (&$values, &$index) {
+        if (isset($values[$index])) {
+            $replacement = (string) $values[$index];
+            $index++;
+            return $replacement;
+        }
+
+        return $m[0]; // Se deja tal cual si no hay valores
+    }, $msg);
 }

@@ -16,7 +16,6 @@ Rabbit es un framework PHP ligero y modular, diseñado para ofrecer flexibilidad
 
 - PHP 8.x o superior
 - Composer (próximamente disponible)
-- Instalar Gettext en el servidor para el correcto funcionamiento de las traducciones [Ver pasos](#traducciones)
 
 #### Instrucciones de instalación
 
@@ -158,13 +157,6 @@ Valida si el valor contiene solo caracteres alfabéticos (letras, sin números n
 ##### **AlphaNumeric**
 Valida si el valor contiene solo caracteres alfanuméricos (letras y números).
 
-### Traducciones
-- sudo apt-get install gettext
-- Descomentar "es_ES.UTF-8 UTF-8" en `/etc/locale.gen` si es necesario.
-- sudo locale-gen
-- sudo update-locale
-- msgfmt ./locale/es_ES/LC_MESSAGES/messages.po -o ./locale/es_ES/LC_MESSAGES/messages.mo
-
 ### Contribuir
 
 Si deseas contribuir a Rabbit, por favor sigue estos pasos:
@@ -195,7 +187,6 @@ Rabbit is a lightweight and modular PHP framework designed to offer flexibility 
 
 - PHP 8.x or higher
 - Composer (coming soon)
-- Install Gettext on the server for proper translation functionality [See steps](#translations)
 
 #### Installation Instructions
 
@@ -339,11 +330,6 @@ Validates if the value contains only alphabetic characters (letters, no numbers 
 ##### **AlphaNumeric**
 Validates if the value contains only alphanumeric characters (letters and numbers).
 
-### Translations
-- sudo apt-get install gettext
-- sudo locale-gen
-- sudo update-locale
-- msgfmt ./locale/es_ES/LC_MESSAGES/messages.po -o ./locale/es_ES/LC_MESSAGES/messages.mo
 
 ### Contributing
 

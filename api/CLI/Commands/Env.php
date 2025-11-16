@@ -11,7 +11,7 @@ class Env extends Command {
   }
 
   private function showEnv() {
-    echo _t("Enviroment") . ": " . ENVIROMENT . "\n";
+    echo _t("generic.info.env_title") . ": " . ENVIROMENT . "\n";
   }
 
 }

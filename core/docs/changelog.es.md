@@ -20,7 +20,7 @@
 - **Testing**: Implementar testing con PHPUnit y crear algunas pruebas de ejemplo.
 - **Manejo de excepciones:** Implementación de manejo total de excepciones personalizadas.
 - **Comandos `php rabbit`:** Más comandos básicos usando `php rabbit [comando]`.
-- **Traducciones:** Traducción al ingles y al español de los mensajes del framework. Creación de un sistema propio de traducciones para no tener que realizar instalaciones extras para poder utilizar la funcion `__t('mensaje');`
+- **Traducciones:** Traducción al ingles y al español de los mensajes del framework. Creación de un sistema propio de traducciones para no tener que realizar instalaciones extras para poder utilizar la funcion `_t('mensaje', []);`
 
 ## [0.2.0] - 2025-02-16
 ### Added

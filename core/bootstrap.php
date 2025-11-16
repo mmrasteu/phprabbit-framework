@@ -15,26 +15,13 @@ $databaseConfig = require BASE_PATH . '/api/Core/DatabaseConfig.php';
 // Inicializar Eloquent
 DatabaseManager::init($databaseConfig);
 
-// Configurar el idioma (puedes cambiar esto dinámicamente según el idioma del usuario)
-$locale = env('APP_LOCALE');
-
-// Verifica que el locale se haya establecido correctamente
-if (!$locale) {
-  // Fallback al español si no se ha configurado el idioma
-  $locale = 'es_ES';
-}
-
-// Establecer el idioma y la localización
-putenv('LC_ALL=' . $locale);  // Establecer el entorno de idioma
-setlocale(LC_ALL, $locale);   // Establecer la localización
-bindtextdomain('messages', BASE_PATH . '/locale');  // Establecer la ruta a los archivos .mo
-textdomain('messages');  // Establecer el dominio de las traducciones
 
 // Definir constantes
 try {
   define('ENVIROMENT', env('ENVIROMENT'));
   define('APP_NAME', env('APP_NAME'));
   define('APP_PORT', env('APP_PORT'));
+  define('APP_LOCALE', env('APP_LOCALE'));
   define('CACHE_DIR',  BASE_PATH . env('CACHE_DIR'));
   define('JWT_SECRET_KEY', env('JWT_SECRET_KEY'));
   define('TOKEN_EXPIRATION_TIME', env('TOKEN_EXPIRATION_TIME'));
@@ -47,8 +34,9 @@ try {
   define('RABBIT_LOG_FILENAME', env('RABBIT_LOG_FILENAME'));
   define('CACHE_DIRECTORY', env('CACHE_DIRECTORY'));
   define('DOCS_ROUTE', env('DOCS_ROUTE'));
+  define('I18N_DEV_MODE', env('I18N_DEV_MODE'));
 } catch(Exception $e) {
-  $msg = _t('There are undefined environment variables') . ': ' . $e-getMessage();
+  $msg = _t("generic.error.env_vars") . ': ' . $e->getMessage();
   rabbit_debug($msg);
 }
 

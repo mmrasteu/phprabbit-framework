@@ -14,8 +14,8 @@ class Make extends Command {
       $this->argumentException("Ha ocurrido un error al ejecutar el comando `make`. Es necesario proporcionar un nombre");
     }
 
-    $model = (in_array('--model', $arrayOptions)) ? true : false;
-    $makeMigration = (in_array('--no-migration', $arrayOptions)) ? false : true;
+    $model = (array_key_exists('model', $arrayOptions)) ? true : false;
+    $makeMigration = (array_key_exists('no-migration', $arrayOptions)) ? false : true;
 
     switch($type){
         case 'controller':
@@ -174,9 +174,9 @@ class Make extends Command {
     $fc->create();
 
     if(!$callByMakeController) {
-      echo "Validador creado correctamente\n";
+      echo _t("console.success.validator") . "\n";
     }
-    rabbit_debug("Validador creado correctamente");
+    rabbit_debug(_t("console.success.validator"));
   }
 
   private function makeModel($name, $callByMakeController=false, $makeMigration=true) {
@@ -242,9 +242,9 @@ class Make extends Command {
     $fc->create();
 
     if(!$callByMakeController) {
-      echo "Modelo '$modelClassName' creado satisfactoriamente\n";
+      echo _t("console.success.create_model", [$modelClassName]) . "\n";
     }
-    rabbit_debug("Modelo '$modelClassName' creado satisfactoriamente");
+    rabbit_debug(_t("console.success.create_model", [$modelClassName]));
 
     if ($makeMigration) {
         // Paso 3: Crear el archivo de la migración. 
@@ -283,10 +283,10 @@ class Make extends Command {
     $fc->create();
 
     if(!$callByMakeController && !$callByMakeModel) {
-      echo "Migración '$migrationName' creada satisfactoriamente\n";
-      echo "Recuerda añadir los campos que necesites a la migración antes de ejectuarla con `php rabbit migrate`\n";
+      echo _t("console.success.create_migration", [$migrationName]) . "\n";
+      echo _t("console.info.create_migration") . "\n";
     }
-    rabbit_debug("Migración '$migrationName' creada satisfactoriamente");
+    rabbit_debug(_t("console.success.create_migration", [$migrationName]));
   }
 
   private function makeMiddleware($name) {
@@ -298,7 +298,7 @@ class Make extends Command {
 
     $fc->setContentLine("<?php\n");
     $fc->setContentLine("namespace Rabbit\Middlewares;\n");
-    $fc->setContentLine("class $migrationName {");
+    $fc->setContentLine("class $middlewareName {");
     $fc->setContentLine("public function __construct() {\n", 1);
     $fc->setContentLine("}\n", 1);
     $fc->setContentLine("public function handle() {\n", 1);
@@ -307,12 +307,10 @@ class Make extends Command {
 
     // Crear el archivo de migración
     $fc->create();
-
-    if(!$callByMakeController && !$callByMakeModel) {
-      echo "Migración '$migrationName' creada satisfactoriamente\n";
-      echo "Recuerda añadir los campos que necesites a la migración antes de ejectuarla con `php rabbit migrate`\n";
-    }
-    rabbit_debug("Migración '$migrationName' creada satisfactoriamente");
+    echo _t("console.success.create_migration", [$middlewareName]) . "\n";
+    echo _t("console.info.create_migration") . "\n";
+    
+    rabbit_debug(_t("console.success.create_migration", [$middlewareName]));
   }
 
 }

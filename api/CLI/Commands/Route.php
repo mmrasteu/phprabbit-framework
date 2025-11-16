@@ -12,8 +12,8 @@ class Route extends Command {
       // Recorremos las rutas registradas por método (GET, POST, etc.)
       $routes = $this->getRoutes();
       
-      $group = (in_array('--group', $arrayOptions)) ? true : false;
-      $middlewares = (in_array('--middleware', $arrayOptions)) ? true : false;
+      $group = (array_key_exists('--group', $arrayOptions)) ? true : false;
+      $middlewares = (array_key_exists('--middleware', $arrayOptions)) ? true : false;
       
       if ($group) {
           $this->displayRoutesByGroup($routes, $middlewares);
@@ -45,24 +45,24 @@ class Route extends Command {
   // Mostrar todas las rutas sin agrupar ni mostrar middlewares
   private function displayAllRoutes($routes, $middlewares)
   {
-      echo "Rutas registradas:\n";
+      echo _t("router.info.registered_title") . "\n";
       foreach ($routes as $route) {
-          echo "    [" . $route['method'] . "] " . $route['uri'] . " ". $route['action'][0] . ":" . $route['action'][1] . "\n";
+        echo t_("router.info.registered_routes", [$route['method'], $route['uri'], $route['action'][0], $route['action'][1]]) . "\n";
 
-          if($middlewares) {
-            $aMiddlewares = [];
-            foreach($route['middlewares'] as $key => $value) {
-              $aMiddlewares[] = (!is_numeric($key)) ? $key: $value;
-            }
-            echo "        Middlewares: " . implode(', ', $aMiddlewares) . "\n";
+        if($middlewares) {
+          $aMiddlewares = [];
+          foreach($route['middlewares'] as $key => $value) {
+            $aMiddlewares[] = (!is_numeric($key)) ? $key: $value;
           }
+          echo _t("router.info.registered_middlewares", [implode(', ', $aMiddlewares) ])
+        }
       }
   }
 
   // Mostrar las rutas ordenadas por el grupo de prefix
   private function displayRoutesByGroup($routes, $middlewares)
   {
-      echo "Rutas agrupadas por grupo:\n";
+      echo _t("router.info.grouped_title" ). "\n";
       $groupedRoutes = [];
 
       // Agrupar las rutas por 'group' (prefix)
@@ -72,18 +72,18 @@ class Route extends Command {
 
       // Mostrar las rutas agrupadas por grupo (prefix)
       foreach ($groupedRoutes as $group => $groupRoutes) {
-          echo "Grupo: '" . $group . "'\n";
-          foreach ($groupRoutes as $route) {
-            echo "    [" . $route['method'] . "] " . $route['uri'] . " ". $route['action'][0] . ":" . $route['action'][1] . "\n";
-            
-            if($middlewares) {
-              $aMiddlewares = [];
-              foreach($route['middlewares'] as $key => $value) {
-                $aMiddlewares[] = (!is_numeric($key)) ? $key: $value;
-              }
-              echo "        Middlewares: " . implode(', ', $aMiddlewares) . "\n";
+        echo _t("router.info.grouped_group", [$group]) . "\n";
+        foreach ($groupRoutes as $route) {
+          echo t_("router.info.registered_routes", [$route['method'], $route['uri'], $route['action'][0], $route['action'][1]]) . "\n";
+          
+          if($middlewares) {
+            $aMiddlewares = [];
+            foreach($route['middlewares'] as $key => $value) {
+              $aMiddlewares[] = (!is_numeric($key)) ? $key: $value;
             }
+            echo _t("router.info.registered_middlewares", [implode(', ', $aMiddlewares) ])
           }
+        }
       }
   }
 

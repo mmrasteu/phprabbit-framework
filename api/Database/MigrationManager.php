@@ -18,7 +18,7 @@ class MigrationManager
             require_once $this->migrationsPath . $migration;
             $migrationInstance = new $class();
             $migrationInstance->up();
-            echo "Migración ejecutada: $class\n";
+            echo _("console.success.exec_migration", [$class]) . "\n";
         }
     }
 

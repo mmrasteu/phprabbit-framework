@@ -9,7 +9,7 @@ class Log extends Command {
   private $logFile = RABBIT_LOG_DIRECTORY . "/" . RABBIT_LOG_FILENAME . '.log';
 
   public function handleLogCommand($arrayOptions){
-    $clear = (in_array('--clear', $arrayOptions)) ? true : false;
+    $clear = (array_key_exists('--clear', $arrayOptions)) ? true : false;
     if($clear) {
       $this->clearLog($this->logFile);
     } else {
@@ -24,16 +24,16 @@ class Log extends Command {
     if ($content !== false) {
       echo $content;
     } else {
-      echo "No se pudo leer el archivo de log.\n";
+      echo _t("log.error.read") . "\n";
     }
   }
 
   function clearLog($logFile) {
     // Sobrescribir el archivo con una cadena vacía, lo que limpia su contenido
     if (file_put_contents($logFile, '') !== false) {
-        echo "El archivo de log ha sido limpiado.\n";
+        echo _t("log.success.clear") . "\n";
     } else {
-        echo "No se pudo limpiar el archivo de log.\n";
+        echo _t("log.error.clear") . "\n";
     }
   }
 
